@@ -176,4 +176,13 @@ class RxCBCentralManager: RxCentralManagerType {
             RxCBPeripheral(peripheral: $0)
         })
     }
+
+    /**
+     Access the underlygin CBCentralManager. Should be used with caution as this whole wrapper hides it. DFU needs it unfortunately.
+
+      - returns: The CBCentralManager
+     */
+    func underlyingCBCentralManager() -> CBCentralManager {
+        return self.centralManager
+    }
 }

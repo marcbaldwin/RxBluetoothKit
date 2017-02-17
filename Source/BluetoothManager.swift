@@ -405,4 +405,12 @@ public class BluetoothManager {
             .map { RestoredState(restoredStateDictionary: $0, bluetoothManager: self) }
     }
     #endif
+
+    /**
+     Access the underlygin CBCentralManager. Should be used with caution as this whole wrapper hides it. DFU needs it unfortunately.
+     - returns: The CBCentralManager
+     */
+    public func underlyingCBCentralManager() -> CBCentralManager {
+        return self.centralManager.underlyingCBCentralManager()
+    }
 }

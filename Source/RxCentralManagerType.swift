@@ -91,4 +91,10 @@ protocol RxCentralManagerType {
      - returns: Observable which emits peripherals with specified identifiers.
      */
     func retrievePeripherals(withIdentifiers identifiers: [UUID]) -> Observable<[RxPeripheralType]>
+
+    /**
+     Access the underlygin CBCentralManager. Should be used with caution as this whole wrapper hides it. DFU needs it unfortunately.
+     - returns: The CBCentralManager
+     */
+    func underlyingCBCentralManager() -> CBCentralManager
 }
