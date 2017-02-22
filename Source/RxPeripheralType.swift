@@ -29,6 +29,9 @@ import CoreBluetooth
  */
 protocol RxPeripheralType {
 
+    /// Underlying CBPeripheral
+    var peripheral: CBPeripheral { get }
+
     /// Peripheral's name
     var name: String? { get }
 

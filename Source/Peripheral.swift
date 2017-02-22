@@ -41,6 +41,10 @@ public class Peripheral {
     /// Implementation of peripheral
     let peripheral: RxPeripheralType
 
+    public var cbPeripheral: CBPeripheral {
+        return self.peripheral.peripheral
+    }
+
     /**
      Continuous value indicating if peripheral is in connected state. This is continuous value, which first emits `.Next` with current state, and later whenever state change occurs
      */
